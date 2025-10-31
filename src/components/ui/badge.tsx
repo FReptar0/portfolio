@@ -14,7 +14,12 @@ const badgeVariants = cva(
         success: "border-transparent bg-green-500 text-white hover:bg-green-600",
         warning: "border-transparent bg-yellow-500 text-white hover:bg-yellow-600",
         info: "border-transparent bg-blue-500 text-white hover:bg-blue-600",
-        tech: "border-transparent bg-gradient-to-r from-emerald-600 to-emerald-800 text-white hover:opacity-90 shadow-sm",
+        tech: "border-transparent gradient-terra text-primary-foreground hover:opacity-90 shadow-sm",
+        mexican: "border-transparent gradient-mexican text-primary-foreground hover:opacity-90 shadow-sm",
+        terra: "border-transparent bg-primary text-primary-foreground hover:bg-primary/90",
+        amber: "border-transparent bg-amber text-primary-foreground hover:opacity-90",
+        turquoise: "border-transparent bg-turquoise text-primary-foreground hover:opacity-90",
+        coral: "border-transparent bg-coral text-primary-foreground hover:opacity-90",
         skill: "border-transparent bg-muted text-muted-foreground hover:bg-muted/80",
         glow: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80 shadow-lg shadow-primary/25"
       },

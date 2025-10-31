@@ -1,6 +1,7 @@
 {
   "navigation": {
     "home": "Inicio",
+    "about": "Sobre mí",
     "projects": "Proyectos",
     "experience": "Experiencia",
     "contact": "Contacto"

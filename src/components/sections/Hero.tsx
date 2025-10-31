@@ -2,25 +2,16 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Download, ArrowDown, Github, Linkedin, Twitter, Mail, Code, Zap, Users } from 'lucide-react';
+import { Download, ArrowDown, Github, Linkedin, Twitter, Mail, Terminal, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { CodingAnimation } from '@/components/animations/LottieContainer';
-import { FadeInSection } from '@/components/animations/ScrollReveal';
-import { TypewriterEffect, DecryptEffect, BackspaceTypeEffect } from '@/components/effects/TextEffects';
-import { SkillsNetwork } from '@/components/animations/SkillsNetwork';
+import { Badge } from '@/components/ui/badge';
+import { TypewriterEffect } from '@/components/effects/TextEffects';
 import { useI18n } from '@/hooks/useI18n';
 import { SOCIAL_LINKS } from '@/lib/constants';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 
 export function Hero() {
   const { t } = useI18n('hero');
-
-  const dynamicWords = [
-    'Arquitecto de Soluciones',
-    'Líder Técnico',
-    'Full-Stack Developer',
-    'DevOps Engineer'
-  ];
 
   const socialIcons = {
     github: Github,
@@ -29,130 +20,93 @@ export function Hero() {
     email: Mail
   };
 
-  const stats = [
-    { icon: Code, value: '5+', label: t('stats.years') },
-    { icon: Zap, value: '20+', label: t('stats.projects') },
-    { icon: Users, value: '3', label: t('stats.teams') }
+  // Terminal-style intro animation
+  const terminalLines = [
+    "$ whoami",
+    "fernando@mx:~$ Ingeniero de Software Full-Stack",
+    "$ cat experience.txt", 
+    "5+ años transformando ideas en código",
+    "$ ls skills/",
+    "React  Node.js  AWS  TypeScript  Docker",
+    "$ location",
+    "Cuernavaca, México 🇲🇽 • Estándares globales"
   ];
 
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient blobs */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mexican-pattern">
+      {/* Subtle background gradient - single accent */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl floating-blob"
+          className="absolute top-1/3 right-1/3 w-96 h-96 bg-gradient-terra opacity-10 rounded-full blur-3xl"
           animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.1, 1]
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.15, 0.1]
           }}
           transition={{
-            duration: 20,
+            duration: 8,
             repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-tr from-teal-500/20 to-cyan-500/20 rounded-full blur-3xl floating-blob"
-          animate={{
-            x: [0, -30, 0],
-            y: [0, 20, 0],
-            scale: [1, 0.9, 1]
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear"
+            ease: "easeInOut"
           }}
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Content - Simplified, Bold */}
           <motion.div
             className="space-y-8"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-            {/* Greeting */}
+            {/* Location Badge */}
             <motion.div variants={staggerItem}>
-              <motion.p 
-                className="text-primary font-medium text-lg mb-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                {t('greeting')}
-              </motion.p>
-              <motion.h1 
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <TypewriterEffect 
-                  text="Fernando Rodriguez"
-                  className="gradient-text"
-                  delay={500}
-                  speed={100}
-                />
-              </motion.h1>
+              <Badge variant="terra" className="mb-6 gap-2">
+                <MapPin className="h-3 w-3" />
+                Cuernavaca, México 🇲🇽
+              </Badge>
             </motion.div>
 
-            {/* Title */}
+            {/* Main Headline - Powerful & Simple */}
             <motion.div variants={staggerItem}>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-2">
-                <DecryptEffect 
-                  text="Ingeniero de Software Full-Stack"
-                  delay={1000}
+              <h1 className="text-display-xl font-display gradient-text mb-6">
+                <TypewriterEffect 
+                  text="Fernando Rodriguez"
+                  delay={300}
+                  speed={80}
                 />
+              </h1>
+              <h2 className="text-display-sm text-foreground mb-6">
+                Ingeniero de Software Full-Stack
               </h2>
-              <div className="h-12 flex items-center">
-                <BackspaceTypeEffect
-                  texts={dynamicWords}
-                  className="text-xl text-primary font-medium"
-                  typeSpeed={120}
-                  backspaceSpeed={80}
-                  pauseTime={2000}
-                />
+            </motion.div>
+
+            {/* Value Proposition - Clear & Direct */}
+            <motion.div variants={staggerItem}>
+              <p className="text-body-xl text-muted-foreground leading-relaxed mb-6">
+                <span className="text-primary font-semibold">Mexicano</span> que transforma ideas complejas en 
+                <span className="text-accent font-semibold"> soluciones escalables</span> con 
+                <span className="text-primary font-semibold"> estándares globales</span>.
+              </p>
+              <p className="text-body-lg text-muted-foreground">
+                5+ años liderando equipos, optimizando arquitecturas y entregando productos que impactan millones de usuarios.
+              </p>
+            </motion.div>
+
+            {/* Core Tech Stack - Simplified */}
+            <motion.div variants={staggerItem}>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {['React', 'Node.js', 'AWS', 'TypeScript', 'Docker'].map((tech) => (
+                  <Badge key={tech} variant="tech" size="lg">
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </motion.div>
 
-            {/* Description */}
-            <motion.p 
-              className="text-lg text-muted-foreground max-w-2xl leading-relaxed"
-              variants={staggerItem}
-            >
-              {t('description')}
-            </motion.p>
-
-            {/* Stats */}
-            <motion.div 
-              className="flex flex-wrap gap-6"
-              variants={staggerItem}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center space-x-3"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <stat.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Focused */}
             <motion.div 
               className="flex flex-col sm:flex-row gap-4"
               variants={staggerItem}
@@ -164,7 +118,7 @@ export function Hero() {
                 className="group"
               >
                 <Link href="/projects" className="flex items-center">
-                  {t('cta_primary')}
+                  Ver mis proyectos
                   <motion.span
                     className="ml-2"
                     whileHover={{ x: 5 }}
@@ -180,7 +134,7 @@ export function Hero() {
                 className="group"
               >
                 <Download className="h-4 w-4 mr-2 group-hover:animate-bounce" />
-                {t('cta_secondary')}
+                Descargar CV
               </Button>
             </motion.div>
 
@@ -219,42 +173,54 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Skills Network */}
-          <FadeInSection direction="right" className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Skills Network Visualization */}
-              <motion.div
-                className="relative z-10"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <SkillsNetwork 
-                  size={500} 
-                  className="max-w-lg h-auto"
+          {/* Right Content - Terminal-style Intro */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <div className="card-mexican p-6 bg-card border border-border">
+              <div className="flex items-center gap-2 mb-4">
+                <Terminal className="h-5 w-5 text-primary" />
+                <span className="text-sm font-mono text-muted-foreground">fernando@mx:~</span>
+              </div>
+              
+              <div className="space-y-2 font-mono text-sm">
+                {terminalLines.map((line, index) => (
+                  <motion.div
+                    key={index}
+                    className={`${
+                      line.startsWith('$') 
+                        ? 'text-primary font-semibold' 
+                        : line.includes('fernando@mx')
+                        ? 'text-accent'
+                        : 'text-muted-foreground'
+                    }`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: 1 + (index * 0.3)
+                    }}
+                  >
+                    {line}
+                  </motion.div>
+                ))}
+                
+                {/* Blinking cursor */}
+                <motion.span
+                  className="inline-block w-2 h-4 bg-primary ml-1"
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ 
+                    duration: 1, 
+                    repeat: Infinity,
+                    delay: 1 + (terminalLines.length * 0.3)
+                  }}
                 />
-              </motion.div>
-
-              {/* Central coding animation (smaller) */}
-              <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"
-                animate={{ 
-                  rotate: [0, 5, -5, 0],
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{ 
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <CodingAnimation
-                  className="w-32 h-32 opacity-60"
-                  height={128}
-                  width={128}
-                />
-              </motion.div>
+              </div>
             </div>
-          </FadeInSection>
+          </motion.div>
         </div>
 
         {/* Scroll indicator */}
@@ -262,10 +228,10 @@ export function Hero() {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 0.5, delay: 2 }}
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-muted-foreground">{t('scroll_indicator')}</span>
+            <span className="text-sm text-muted-foreground">Descubre más</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}

@@ -1,0 +1,30 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "actions": {
+    "view_more": "View more",
+    "view_details": "View details",
+    "view_demo": "View demo",
+    "download_cv": "Download CV",
+    "send_message": "Send message",
+    "copy_email": "Copy email",
+    "back_to_top": "Back to top"
+  },
+  "status": {
+    "available": "Available for work",
+    "busy": "Currently busy",
+    "loading": "Loading...",
+    "success": "Success!",
+    "error": "Error"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "system": "System"
+  }
+}

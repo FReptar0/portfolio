@@ -1,12 +1,63 @@
 {
-  "title": "Proyectos Destacados",
-  "subtitle": "Soluciones innovadoras que impulsan el crecimiento empresarial",
+  "badge": "Casos de Estudio",
+  "title": "Proyectos que Transforman Negocios",
+  "subtitle": "Cada proyecto es una historia de transformación: desde desafíos complejos hasta soluciones escalables que generan impacto real en usuarios y organizaciones.",
   "filter": {
     "all": "Todos",
     "frontend": "Frontend",
     "backend": "Backend",
     "fullstack": "Full-Stack",
     "devops": "DevOps"
+  },
+  "featured": {
+    "title": "Proyectos Destacados"
+  },
+  "status": {
+    "completed": "Completado",
+    "in_progress": "En desarrollo",
+    "planned": "Planeado"
+  },
+  "case_study": {
+    "problem": "Problema",
+    "solution": "Solución",
+    "impact": "Impacto"
+  },
+  "actions": {
+    "demo": "Demo",
+    "code": "Código"
+  },
+  "cta": {
+    "title": "¿Listo para tu próximo proyecto?",
+    "subtitle": "Transformemos tu idea en una solución escalable que genere impacto real. Experiencia comprobada en arquitecturas que escalan.",
+    "start_project": "Iniciar Proyecto",
+    "view_experience": "Ver Experiencia"
+  },
+  "case_studies": {
+    "ecommerce": {
+      "problem": "E-commerce legacy con escalabilidad limitada y performance issues",
+      "solution": "Arquitectura de microservicios cloud-native con CI/CD automatizado",
+      "impact": "40% mejora en performance, 99.9% uptime, soporte para 10k+ usuarios concurrentes"
+    },
+    "monitoring": {
+      "problem": "Falta de visibilidad en sistemas distribuidos causando downtime",
+      "solution": "Dashboard tiempo real con alertas inteligentes y métricas centralizadas",
+      "impact": "60% reducción en tiempo de resolución, detección proactiva de issues"
+    },
+    "api_gateway": {
+      "problem": "Microservicios sin gestión centralizada de seguridad y tráfico",
+      "solution": "Gateway con autenticación, rate limiting y observabilidad completa",
+      "impact": "300% mejora en throughput, seguridad unificada, trazabilidad completa"
+    },
+    "analytics": {
+      "problem": "Datos empresariales dispersos sin insights accionables",
+      "solution": "Plataforma analytics con visualizaciones interactivas y reportes automáticos",
+      "impact": "85% tasa de adopción, decisiones data-driven, ROI medible"
+    },
+    "default": {
+      "problem": "Desafío técnico complejo",
+      "solution": "Solución arquitectónica escalable",
+      "impact": "Resultados medibles positivos"
+    }
   },
   "projects": {
     "ecommerce": {

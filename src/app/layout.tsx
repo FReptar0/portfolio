@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Stage3Layout } from "@/components/layout/Stage3Layout";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Mexican Professional Typography System
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const interDisplay = Inter({
+  variable: "--font-inter-display", 
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const geistMono = Geist_Mono({
@@ -68,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${interDisplay.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -76,13 +86,15 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
         >
-          <div className="min-h-screen bg-background font-sans antialiased">
-            <Navbar />
-            <main className="relative">
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <Stage3Layout>
+            <div className="min-h-screen bg-background font-sans antialiased">
+              <Navbar />
+              <main className="relative">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </Stage3Layout>
         </ThemeProvider>
       </body>
     </html>

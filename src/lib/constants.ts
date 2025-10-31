@@ -10,6 +10,7 @@ export const SITE_CONFIG = {
 
 export const NAVIGATION_ITEMS = [
   { name: 'navigation.home', href: '/' },
+  { name: 'navigation.about', href: '/#about' },
   { name: 'navigation.projects', href: '/projects' },
   { name: 'navigation.experience', href: '/experience' },
   { name: 'navigation.contact', href: '/contact' }

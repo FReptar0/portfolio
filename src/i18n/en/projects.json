@@ -1,0 +1,97 @@
+{
+  "badge": "Case Studies",
+  "title": "Projects that Transform Business",
+  "subtitle": "Each project is a transformation story: from complex challenges to scalable solutions that generate real impact on users and organizations.",
+  "filter": {
+    "all": "All",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "fullstack": "Full-Stack",
+    "devops": "DevOps"
+  },
+  "featured": {
+    "title": "Featured Projects"
+  },
+  "status": {
+    "completed": "Completed",
+    "in_progress": "In Development",
+    "planned": "Planned"
+  },
+  "case_study": {
+    "problem": "Problem",
+    "solution": "Solution",
+    "impact": "Impact"
+  },
+  "actions": {
+    "demo": "Demo",
+    "code": "Code"
+  },
+  "cta": {
+    "title": "Ready for your next project?",
+    "subtitle": "Let's transform your idea into a scalable solution that generates real impact. Proven experience in architectures that scale.",
+    "start_project": "Start Project",
+    "view_experience": "View Experience"
+  },
+  "case_studies": {
+    "ecommerce": {
+      "problem": "Legacy e-commerce with limited scalability and performance issues",
+      "solution": "Cloud-native microservices architecture with automated CI/CD",
+      "impact": "40% performance improvement, 99.9% uptime, support for 10k+ concurrent users"
+    },
+    "monitoring": {
+      "problem": "Lack of visibility in distributed systems causing downtime",
+      "solution": "Real-time dashboard with intelligent alerts and centralized metrics",
+      "impact": "60% reduction in resolution time, proactive issue detection"
+    },
+    "api_gateway": {
+      "problem": "Microservices without centralized security and traffic management",
+      "solution": "Gateway with authentication, rate limiting and complete observability",
+      "impact": "300% throughput improvement, unified security, complete traceability"
+    },
+    "analytics": {
+      "problem": "Scattered business data without actionable insights",
+      "solution": "Analytics platform with interactive visualizations and automated reports",
+      "impact": "85% adoption rate, data-driven decisions, measurable ROI"
+    },
+    "default": {
+      "problem": "Complex technical challenge",
+      "solution": "Scalable architectural solution",
+      "impact": "Positive measurable results"
+    }
+  },
+  "projects": {
+    "ecommerce": {
+      "title": "Scalable E-commerce Platform",
+      "description": "Microservices architecture with React, Node.js and Kubernetes. Supports 10k+ concurrent users with 99.9% uptime.",
+      "metrics": "↑ 40% better performance",
+      "github_stars": "1.2k",
+      "demo_url": "https://demo.ecommerce.com",
+      "github_url": "https://github.com/username/ecommerce"
+    },
+    "monitoring": {
+      "title": "Real-time Monitoring System",
+      "description": "Analytics dashboard with real-time metrics, intelligent alerts and integration with multiple data sources.",
+      "metrics": "↓ 60% resolution time",
+      "github_stars": "856",
+      "demo_url": "https://demo.monitoring.com",
+      "github_url": "https://github.com/username/monitoring"
+    },
+    "api_gateway": {
+      "title": "Microservices API Gateway",
+      "description": "Centralized gateway with authentication, rate limiting, logging and load balancing for microservices architecture.",
+      "metrics": "↑ 300% throughput",
+      "github_stars": "2.1k",
+      "demo_url": "https://demo.gateway.com",
+      "github_url": "https://github.com/username/gateway"
+    },
+    "dashboard": {
+      "title": "B2B Analytics Dashboard",
+      "description": "Business analytics platform with interactive visualizations, automated reports and CRM integration.",
+      "metrics": "↑ 85% adoption rate",
+      "github_stars": "643",
+      "demo_url": "https://demo.dashboard.com",
+      "github_url": "https://github.com/username/dashboard"
+    }
+  },
+  "view_all": "View all projects"
+}

@@ -8,6 +8,8 @@ import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useI18n } from '@/hooks/useI18n';
+import { LanguageToggle } from '@/components/layout/LanguageToggle';
+import { CommandPaletteTrigger } from '@/components/ui/CommandPaletteTrigger';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { NAVIGATION_ITEMS } from '@/lib/constants';
 import { navSlideIn } from '@/lib/animations';
@@ -55,17 +57,16 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+            {/* Simple Initials */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Link
-                href="/"
-                className="text-xl font-bold gradient-text hover:scale-105 transition-transform"
-              >
-                FR
+              <Link href="/" className="flex items-center">
+                <div className="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center hover:scale-105 transition-transform">
+                  <span className="font-display font-bold text-primary text-lg">FR</span>
+                </div>
               </Link>
             </motion.div>
 
@@ -107,9 +108,27 @@ export function Navbar() {
               ))}
             </motion.div>
 
-            {/* Theme toggle and mobile menu */}
-            <div className="flex items-center space-x-4">
+            {/* Command palette, language toggle and mobile menu */}
+            <div className="flex items-center space-x-3">
+              {/* Command Palette Trigger */}
+              <motion.div
+                className="hidden sm:block"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <CommandPaletteTrigger />
+              </motion.div>
 
+              {/* Language Toggle */}
+              <motion.div
+                className="hidden sm:block"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <LanguageToggle />
+              </motion.div>
 
               {/* Mobile menu button */}
               <motion.div

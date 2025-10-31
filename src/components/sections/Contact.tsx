@@ -9,7 +9,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Badge, StatusBadge } from '@/components/ui/badge';
 import { ScrollReveal, FadeInSection } from '@/components/animations/ScrollReveal';
 import { useI18n } from '@/hooks/useI18n';
-import { terminalCommands } from '@/data/social';
 import { copyToClipboard } from '@/lib/utils';
 
 export function Contact() {
@@ -25,7 +24,6 @@ export function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
-  const [currentCommand, setCurrentCommand] = useState(0);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
@@ -53,14 +51,6 @@ export function Contact() {
     }
   };
 
-  // Terminal animation effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentCommand(prev => (prev + 1) % terminalCommands.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="py-20 bg-muted/30">
@@ -291,39 +281,6 @@ export function Contact() {
               </div>
             </FadeInSection>
 
-            {/* Terminal */}
-            <FadeInSection direction="right" delay={0.2}>
-              <div className="bg-gray-900 rounded-xl p-6 border shadow-sm font-mono text-sm">
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-400 ml-2">terminal</span>
-                </div>
-                
-                <div className="space-y-2 text-green-400">
-                  {terminalCommands.slice(0, currentCommand + 1).map((cmd, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, width: 0 }}
-                      animate={{ opacity: 1, width: "100%" }}
-                      transition={{ duration: 0.8, delay: index * 0.5 }}
-                      className="flex items-center"
-                    >
-                      <span>{cmd.command}</span>
-                      <span className="ml-2 text-green-400">✓</span>
-                    </motion.div>
-                  ))}
-                  <motion.div
-                    className="flex items-center"
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                  >
-                    <span className="bg-green-400 w-2 h-4 inline-block"></span>
-                  </motion.div>
-                </div>
-              </div>
-            </FadeInSection>
           </div>
         </div>
       </div>
