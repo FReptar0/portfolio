@@ -266,7 +266,7 @@ export function Projects() {
                       {/* Action Buttons */}
                       <div className={`flex gap-2 ${isLarge ? 'gap-3' : 'gap-2'}`}>
                         {project.demoUrl && (
-                          <Button variant="terra" size={isLarge ? "sm" : "xs"} asChild className="flex-1">
+                          <Button variant="terra" size="sm" asChild className={`flex-1 ${!isLarge ? 'text-xs px-2 py-1 h-7' : ''}`}>
                             <Link href={project.demoUrl} target="_blank" className="flex items-center gap-2">
                               <ExternalLink className="h-3 w-3" />
 {t('actions.demo')}
@@ -274,7 +274,7 @@ export function Projects() {
                           </Button>
                         )}
                         {project.githubUrl && (
-                          <Button variant="outline" size={isLarge ? "sm" : "xs"} asChild className="flex-1">
+                          <Button variant="outline" size="sm" asChild className={`flex-1 ${!isLarge ? 'text-xs px-2 py-1 h-7' : ''}`}>
                             <Link href={project.githubUrl} target="_blank" className="flex items-center gap-2">
                               <Github className="h-3 w-3" />
 {t('actions.code')}
