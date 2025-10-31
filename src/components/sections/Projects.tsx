@@ -66,7 +66,7 @@ export function Projects() {
         
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -74,17 +74,17 @@ export function Projects() {
           <Badge variant="terra" className="mb-4">
             {t('badge')}
           </Badge>
-          <h2 className="text-display-md font-display gradient-text mb-6">
+          <h2 className="text-display-sm sm:text-display-md font-display gradient-text mb-4 sm:mb-6">
             {t('title')}
           </h2>
-          <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-body-base sm:text-body-lg text-muted-foreground max-w-3xl mx-auto px-4">
             {t('subtitle')}
           </p>
         </motion.div>
 
         {/* Category Filters */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -107,28 +107,28 @@ export function Projects() {
 
         {/* Featured Projects - Bento Grid */}
         <motion.div
-          className="mb-16"
+          className="mb-12 sm:mb-16"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
         >
-          <h3 className="text-display-sm font-display text-foreground mb-8 text-center">
+          <h3 className="text-lg sm:text-display-sm font-display text-foreground mb-6 sm:mb-8 text-center">
             {t('featured.title')}
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-fr">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuredProjects.slice(0, 6).map((project, index) => {
               const caseStudy = getCaseStudyInfo(project);
-              // Bento layout: different sizes for visual interest
+              // Bento layout: different sizes for visual interest on larger screens
               const getGridClasses = (index: number) => {
                 switch (index) {
-                  case 0: return 'md:col-span-2 md:row-span-2'; // Large featured
-                  case 1: return 'md:col-span-1 md:row-span-1'; // Regular
-                  case 2: return 'md:col-span-1 md:row-span-1'; // Regular  
-                  case 3: return 'md:col-span-2 md:row-span-1'; // Wide
-                  case 4: return 'md:col-span-1 md:row-span-1'; // Regular
-                  case 5: return 'md:col-span-1 md:row-span-1'; // Regular
-                  default: return 'md:col-span-1 md:row-span-1';
+                  case 0: return 'sm:col-span-2 lg:col-span-2 lg:row-span-2'; // Large featured
+                  case 1: return 'sm:col-span-1 lg:col-span-1 lg:row-span-1'; // Regular
+                  case 2: return 'sm:col-span-1 lg:col-span-1 lg:row-span-1'; // Regular  
+                  case 3: return 'sm:col-span-2 lg:col-span-2 lg:row-span-1'; // Wide
+                  case 4: return 'sm:col-span-1 lg:col-span-1 lg:row-span-1'; // Regular
+                  case 5: return 'sm:col-span-1 lg:col-span-1 lg:row-span-1'; // Regular
+                  default: return 'sm:col-span-1 lg:col-span-1 lg:row-span-1';
                 }
               };
               const isLarge = index === 0;
@@ -144,12 +144,12 @@ export function Projects() {
                     
                     {/* Project Image/Preview */}
                     <div className={`relative overflow-hidden bg-gradient-to-br from-primary/90 to-accent/80 ${
-                      isLarge ? 'h-48' : isWide ? 'h-32' : 'h-28'
+                      isLarge ? 'h-40 sm:h-48' : isWide ? 'h-32' : 'h-32 sm:h-28'
                     }`}>
                       <div className="absolute inset-0 bg-black/40" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center text-white drop-shadow-lg">
-                          <div className={`${isLarge ? 'text-4xl' : 'text-3xl'} mb-2`}>🚀</div>
+                          <div className={`${isLarge ? 'text-3xl sm:text-4xl' : 'text-2xl sm:text-3xl'} mb-2`}>🚀</div>
                           <div className={`${isLarge ? 'text-sm' : 'text-xs'} font-semibold text-white`}>{project.title}</div>
                         </div>
                       </div>
@@ -166,12 +166,12 @@ export function Projects() {
                       </div>
                     </div>
 
-                    <CardContent className={`${isLarge ? 'p-6' : 'p-4'}`}>
+                    <CardContent className={`${isLarge ? 'p-4 sm:p-6' : 'p-3 sm:p-4'}`}>
                       {/* Project Header */}
-                      <div className={`${isLarge ? 'mb-4' : 'mb-3'}`}>
+                      <div className={`${isLarge ? 'mb-3 sm:mb-4' : 'mb-2 sm:mb-3'}`}>
                         <div className="flex items-center justify-between mb-2">
                           <h4 className={`font-display font-semibold text-foreground ${
-                            isLarge ? 'text-xl' : isWide ? 'text-lg' : 'text-base'
+                            isLarge ? 'text-lg sm:text-xl' : isWide ? 'text-base sm:text-lg' : 'text-sm sm:text-base'
                           }`}>
                             {project.title}
                           </h4>
@@ -198,9 +198,9 @@ export function Projects() {
                         )}
                       </div>
 
-                      {/* Case Study - Problem/Solution/Impact */}
+                      {/* Case Study - Problem/Solution/Impact - Only show on larger screens for large cards */}
                       {isLarge && (
-                        <div className="mb-4 space-y-3">
+                        <div className="hidden lg:block mb-4 space-y-3">
                           <div className="space-y-2">
                             <div className="flex items-center gap-2">
                               <Target className="h-4 w-4 text-primary" />
@@ -233,9 +233,9 @@ export function Projects() {
                         </div>
                       )}
 
-                      {/* Compact case study for wide cards */}
+                      {/* Compact case study for wide cards - Only show on larger screens */}
                       {isWide && !isLarge && (
-                        <div className="mb-3">
+                        <div className="hidden lg:block mb-3">
                           <p className="text-sm text-muted-foreground">
                             <span className="text-primary font-medium">{t('case_study.problem')}:</span> {caseStudy.problem.substring(0, 60)}...
                           </p>
@@ -243,21 +243,21 @@ export function Projects() {
                       )}
 
                       {/* Description */}
-                      <p className={`text-muted-foreground ${isLarge ? 'mb-4 text-base' : 'mb-3 text-sm'}`}>
-                        {isLarge ? project.description : project.description.substring(0, 100) + '...'}
+                      <p className={`text-muted-foreground ${isLarge ? 'mb-3 sm:mb-4 text-sm sm:text-base' : 'mb-2 sm:mb-3 text-xs sm:text-sm'}`}>
+                        {isLarge ? project.description.substring(0, 120) + '...' : project.description.substring(0, 80) + '...'}
                       </p>
 
                       {/* Technologies */}
-                      <div className={`${isLarge ? 'mb-6' : 'mb-4'}`}>
+                      <div className={`${isLarge ? 'mb-4 sm:mb-6' : 'mb-3 sm:mb-4'}`}>
                         <div className="flex flex-wrap gap-1">
-                          {project.technologies.slice(0, isLarge ? 7 : isWide ? 5 : 3).map((tech) => (
-                            <Badge key={tech} variant="tech" size="sm">
+                          {project.technologies.slice(0, isLarge ? 4 : 3).map((tech) => (
+                            <Badge key={tech} variant="tech" size="sm" className="text-xs">
                               {tech}
                             </Badge>
                           ))}
-                          {project.technologies.length > (isLarge ? 7 : isWide ? 5 : 3) && (
-                            <Badge variant="outline" size="sm">
-                              +{project.technologies.length - (isLarge ? 7 : isWide ? 5 : 3)}
+                          {project.technologies.length > (isLarge ? 4 : 3) && (
+                            <Badge variant="outline" size="sm" className="text-xs">
+                              +{project.technologies.length - (isLarge ? 4 : 3)}
                             </Badge>
                           )}
                         </div>
@@ -266,18 +266,20 @@ export function Projects() {
                       {/* Action Buttons */}
                       <div className={`flex gap-2 ${isLarge ? 'gap-3' : 'gap-2'}`}>
                         {project.demoUrl && (
-                          <Button variant="terra" size="sm" asChild className={`flex-1 ${!isLarge ? 'text-xs px-2 py-1 h-7' : ''}`}>
-                            <Link href={project.demoUrl} target="_blank" className="flex items-center gap-2">
+                          <Button variant="terra" size="sm" asChild className={`flex-1 text-xs sm:text-sm px-2 py-1 h-7 sm:h-9 sm:px-3 sm:py-2`}>
+                            <Link href={project.demoUrl} target="_blank" className="flex items-center gap-1 sm:gap-2">
                               <ExternalLink className="h-3 w-3" />
-{t('actions.demo')}
+                              <span className="hidden sm:inline">{t('actions.demo')}</span>
+                              <span className="sm:hidden">Demo</span>
                             </Link>
                           </Button>
                         )}
                         {project.githubUrl && (
-                          <Button variant="outline" size="sm" asChild className={`flex-1 ${!isLarge ? 'text-xs px-2 py-1 h-7' : ''}`}>
-                            <Link href={project.githubUrl} target="_blank" className="flex items-center gap-2">
+                          <Button variant="outline" size="sm" asChild className={`flex-1 text-xs sm:text-sm px-2 py-1 h-7 sm:h-9 sm:px-3 sm:py-2`}>
+                            <Link href={project.githubUrl} target="_blank" className="flex items-center gap-1 sm:gap-2">
                               <Github className="h-3 w-3" />
-{t('actions.code')}
+                              <span className="hidden sm:inline">{t('actions.code')}</span>
+                              <span className="sm:hidden">Code</span>
                             </Link>
                           </Button>
                         )}
@@ -292,7 +294,7 @@ export function Projects() {
 
         {/* All Projects Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
@@ -305,36 +307,36 @@ export function Projects() {
               <Card className="card-mexican h-full overflow-hidden group hover:shadow-lg transition-all duration-300">
                 
                 {/* Project Preview */}
-                <div className="relative h-32 bg-gradient-to-br from-primary/90 to-accent/80 overflow-hidden">
+                <div className="relative h-28 sm:h-32 bg-gradient-to-br from-primary/90 to-accent/80 overflow-hidden">
                   <div className="absolute inset-0 bg-black/40" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white drop-shadow-lg">
-                      <div className="text-3xl mb-2">💡</div>
-                      <div className="text-sm font-medium text-white">{project.title}</div>
+                      <div className="text-2xl sm:text-3xl mb-2">💡</div>
+                      <div className="text-xs sm:text-sm font-medium text-white">{project.title}</div>
                     </div>
                   </div>
                 </div>
 
-                <CardContent className="p-6">
-                  <div className="mb-3">
-                    <h4 className="font-display font-semibold text-foreground mb-2">
+                <CardContent className="p-3 sm:p-6">
+                  <div className="mb-2 sm:mb-3">
+                    <h4 className="font-display font-semibold text-foreground mb-2 text-sm sm:text-base">
                       {project.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {project.description}
+                    <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
+                      {project.description.substring(0, 80) + '...'}
                     </p>
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-4">
+                  <div className="mb-3 sm:mb-4">
                     <div className="flex flex-wrap gap-1">
                       {project.technologies.slice(0, 3).map((tech) => (
-                        <Badge key={tech} variant="tech" size="sm">
+                        <Badge key={tech} variant="tech" size="sm" className="text-xs">
                           {tech}
                         </Badge>
                       ))}
                       {project.technologies.length > 3 && (
-                        <Badge variant="outline" size="sm">
+                        <Badge variant="outline" size="sm" className="text-xs">
                           +{project.technologies.length - 3}
                         </Badge>
                       )}
@@ -344,18 +346,20 @@ export function Projects() {
                   {/* Actions */}
                   <div className="flex gap-2">
                     {project.demoUrl && (
-                      <Button variant="terra" size="sm" asChild className="flex-1">
-                        <Link href={project.demoUrl} target="_blank" className="flex items-center gap-2">
+                      <Button variant="terra" size="sm" asChild className="flex-1 text-xs sm:text-sm px-2 py-1 h-7 sm:h-9 sm:px-3 sm:py-2">
+                        <Link href={project.demoUrl} target="_blank" className="flex items-center gap-1 sm:gap-2">
                           <ExternalLink className="h-3 w-3" />
-{t('actions.demo')}
+                          <span className="hidden sm:inline">{t('actions.demo')}</span>
+                          <span className="sm:hidden">Demo</span>
                         </Link>
                       </Button>
                     )}
                     {project.githubUrl && (
-                      <Button variant="outline" size="sm" asChild className="flex-1">
-                        <Link href={project.githubUrl} target="_blank" className="flex items-center gap-2">
+                      <Button variant="outline" size="sm" asChild className="flex-1 text-xs sm:text-sm px-2 py-1 h-7 sm:h-9 sm:px-3 sm:py-2">
+                        <Link href={project.githubUrl} target="_blank" className="flex items-center gap-1 sm:gap-2">
                           <Github className="h-3 w-3" />
-                          {t('actions.code')}
+                          <span className="hidden sm:inline">{t('actions.code')}</span>
+                          <span className="sm:hidden">Code</span>
                         </Link>
                       </Button>
                     )}
@@ -368,25 +372,25 @@ export function Projects() {
 
         {/* CTA Section */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <div className="bg-primary/5 border border-primary/10 rounded-2xl p-8">
-            <h3 className="text-display-sm font-display text-foreground mb-4">
+          <div className="bg-primary/5 border border-primary/10 rounded-2xl p-6 sm:p-8 mx-4 sm:mx-0">
+            <h3 className="text-lg sm:text-display-sm font-display text-foreground mb-3 sm:mb-4">
               {t('cta.title')}
             </h3>
-            <p className="text-body-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-body-lg text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto">
               {t('cta.subtitle')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="gradient" size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button variant="gradient" size="lg" asChild className="w-full sm:w-auto">
                 <Link href="/contact">
                   {t('cta.start_project')}
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
                 <Link href="/experience">
                   {t('cta.view_experience')}
                 </Link>
