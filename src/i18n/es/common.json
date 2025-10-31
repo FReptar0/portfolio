@@ -1,0 +1,29 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "actions": {
+    "view_more": "Ver más",
+    "view_details": "Ver detalles",
+    "view_demo": "Ver demo",
+    "download_cv": "Descargar CV",
+    "send_message": "Enviar mensaje",
+    "copy_email": "Copiar email",
+    "back_to_top": "Volver arriba"
+  },
+  "status": {
+    "available": "Disponible para trabajar",
+    "busy": "Actualmente ocupado",
+    "loading": "Cargando...",
+    "success": "¡Éxito!",
+    "error": "Error"
+  },
+  "theme": {
+    "light": "Modo claro",
+    "dark": "Modo oscuro",
+    "system": "Sistema"
+  }
+}

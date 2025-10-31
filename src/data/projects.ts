@@ -1,0 +1,92 @@
+import { Project } from '@/types/portfolio.types';
+
+export const projects: Project[] = [
+  {
+    id: 'ecommerce-platform',
+    title: 'Plataforma E-commerce Escalable',
+    description: 'Arquitectura de microservicios con React, Node.js y Kubernetes. Soporta 10k+ usuarios concurrentes con 99.9% uptime.',
+    image: '/images/projects/ecommerce.jpg',
+    technologies: ['React', 'Node.js', 'TypeScript', 'Kubernetes', 'Docker', 'PostgreSQL', 'Redis'],
+    category: 'fullstack',
+    demoUrl: 'https://demo.ecommerce.com',
+    githubUrl: 'https://github.com/username/ecommerce',
+    featured: true,
+    metrics: '↑ 40% mejor performance',
+    githubStars: '1.2k',
+    status: 'completed',
+    year: 2023
+  },
+  {
+    id: 'monitoring-system',
+    title: 'Sistema de Monitoreo en Tiempo Real',
+    description: 'Dashboard analytics con métricas en tiempo real, alertas inteligentes y integración con múltiples fuentes de datos.',
+    image: '/images/projects/monitoring.jpg',
+    technologies: ['Vue.js', 'Python', 'FastAPI', 'InfluxDB', 'Grafana', 'Docker'],
+    category: 'devops',
+    demoUrl: 'https://demo.monitoring.com',
+    githubUrl: 'https://github.com/username/monitoring',
+    featured: true,
+    metrics: '↓ 60% tiempo resolución',
+    githubStars: '856',
+    status: 'completed',
+    year: 2023
+  },
+  {
+    id: 'api-gateway',
+    title: 'API Gateway Microservicios',
+    description: 'Gateway centralizado con autenticación, rate limiting, logging y distribución de carga para arquitectura de microservicios.',
+    image: '/images/projects/gateway.jpg',
+    technologies: ['Go', 'Kong', 'Kubernetes', 'OAuth2', 'Prometheus', 'Jaeger'],
+    category: 'backend',
+    demoUrl: 'https://demo.gateway.com',
+    githubUrl: 'https://github.com/username/gateway',
+    featured: true,
+    metrics: '↑ 300% throughput',
+    githubStars: '2.1k',
+    status: 'completed',
+    year: 2022
+  },
+  {
+    id: 'analytics-dashboard',
+    title: 'Dashboard Analytics B2B',
+    description: 'Plataforma de analytics empresarial con visualizaciones interactivas, reportes automatizados y integración con CRM.',
+    image: '/images/projects/dashboard.jpg',
+    technologies: ['React', 'TypeScript', 'D3.js', 'Node.js', 'MongoDB', 'Elasticsearch'],
+    category: 'frontend',
+    demoUrl: 'https://demo.dashboard.com',
+    githubUrl: 'https://github.com/username/dashboard',
+    featured: true,
+    metrics: '↑ 85% adoption rate',
+    githubStars: '643',
+    status: 'completed',
+    year: 2022
+  },
+  {
+    id: 'blockchain-wallet',
+    title: 'Blockchain Wallet',
+    description: 'Wallet descentralizado con soporte multi-chain, staking y DeFi integrations.',
+    image: '/images/projects/wallet.jpg',
+    technologies: ['React Native', 'Solidity', 'Web3.js', 'Ethereum', 'IPFS'],
+    category: 'fullstack',
+    githubUrl: 'https://github.com/username/wallet',
+    featured: false,
+    githubStars: '234',
+    status: 'in-progress',
+    year: 2024
+  },
+  {
+    id: 'ai-chatbot',
+    title: 'AI Customer Support Bot',
+    description: 'Chatbot inteligente con procesamiento de lenguaje natural y integración con sistemas CRM.',
+    image: '/images/projects/chatbot.jpg',
+    technologies: ['Python', 'TensorFlow', 'NLP', 'FastAPI', 'React', 'WebSocket'],
+    category: 'fullstack',
+    demoUrl: 'https://demo.chatbot.com',
+    githubUrl: 'https://github.com/username/chatbot',
+    featured: false,
+    metrics: '↑ 70% resolution rate',
+    githubStars: '445',
+    status: 'completed',
+    year: 2023
+  }
+];

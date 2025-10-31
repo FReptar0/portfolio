@@ -1,0 +1,46 @@
+{
+  "title": "Experiencia Profesional",
+  "subtitle": "Mi trayectoria construyendo soluciones escalables",
+  "positions": {
+    "senior_lead": {
+      "role": "Líder Técnico Senior",
+      "company": "Tech Corp",
+      "period": "2023 - Presente",
+      "location": "Cuernavaca, México",
+      "description": "Liderando equipo de 8 desarrolladores en la arquitectura y desarrollo de plataformas cloud-native. Implementación de CI/CD y mejores prácticas DevOps.",
+      "achievements": [
+        "Redujo tiempo de deploy en 70% implementando pipelines automatizados",
+        "Arquitectó sistema de microservicios que maneja 1M+ requests/día",
+        "Mentorizó 5 desarrolladores junior, 3 promovidos a roles senior"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "AWS", "Kubernetes", "Docker"]
+    },
+    "fullstack": {
+      "role": "Full-Stack Developer",
+      "company": "StartupXYZ",
+      "period": "2021 - 2023",
+      "location": "Cuernavaca, México",
+      "description": "Desarrollo end-to-end de aplicaciones web escalables, desde el diseño de APIs hasta interfaces de usuario modernas. Colaboración directa con product managers y diseñadores.",
+      "achievements": [
+        "Desarrolló MVP que atrajo $2M en funding Series A",
+        "Implementó sistema de pagos procesando $500k+ mensuales",
+        "Optimizó performance web mejorando Core Web Vitals en 60%"
+      ],
+      "technologies": ["Vue.js", "Python", "Django", "PostgreSQL", "Redis", "Stripe"]
+    },
+    "backend": {
+      "role": "Backend Developer",
+      "company": "Enterprise Inc",
+      "period": "2019 - 2021",
+      "location": "Valencia, España",
+      "description": "Especializado en desarrollo de APIs REST y GraphQL, bases de datos relacionales y no relacionales, y sistemas de alta concurrencia.",
+      "achievements": [
+        "Migró monolito legacy a arquitectura de microservicios",
+        "Implementó caching distribuido reduciendo latencia 80%",
+        "Diseñó schema de BD optimizado para 10M+ registros"
+      ],
+      "technologies": ["Java", "Spring Boot", "MongoDB", "Apache Kafka", "Elasticsearch"]
+    }
+  },
+  "download_cv": "Descargar CV completo"
+}

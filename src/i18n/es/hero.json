@@ -1,0 +1,21 @@
+{
+  "greeting": "Hola, soy",
+  "name": "Fernando Rodriguez",
+  "title": "Ingeniero de Software Full-Stack",
+  "subtitle": "Arquitecto de Soluciones & Líder Técnico",
+  "description": "Transformo ideas complejas en soluciones elegantes. Especializado en arquitecturas escalables, con experiencia liderando equipos y optimizando sistemas de alto rendimiento.",
+  "cta_primary": "Ver Proyectos",
+  "cta_secondary": "Descargar CV",
+  "stats": {
+    "years": "5+ años de experiencia",
+    "projects": "20+ proyectos completados",
+    "teams": "3 equipos liderados"
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "email": "Email"
+  },
+  "scroll_indicator": "Desplázate para explorar"
+}

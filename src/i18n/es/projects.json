@@ -1,0 +1,46 @@
+{
+  "title": "Proyectos Destacados",
+  "subtitle": "Soluciones innovadoras que impulsan el crecimiento empresarial",
+  "filter": {
+    "all": "Todos",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "fullstack": "Full-Stack",
+    "devops": "DevOps"
+  },
+  "projects": {
+    "ecommerce": {
+      "title": "Plataforma E-commerce Escalable",
+      "description": "Arquitectura de microservicios con React, Node.js y Kubernetes. Soporta 10k+ usuarios concurrentes con 99.9% uptime.",
+      "metrics": "↑ 40% mejor performance",
+      "github_stars": "1.2k",
+      "demo_url": "https://demo.ecommerce.com",
+      "github_url": "https://github.com/username/ecommerce"
+    },
+    "monitoring": {
+      "title": "Sistema de Monitoreo en Tiempo Real",
+      "description": "Dashboard analytics con métricas en tiempo real, alertas inteligentes y integración con múltiples fuentes de datos.",
+      "metrics": "↓ 60% tiempo resolución",
+      "github_stars": "856",
+      "demo_url": "https://demo.monitoring.com",
+      "github_url": "https://github.com/username/monitoring"
+    },
+    "api_gateway": {
+      "title": "API Gateway Microservicios",
+      "description": "Gateway centralizado con autenticación, rate limiting, logging y distribución de carga para arquitectura de microservicios.",
+      "metrics": "↑ 300% throughput",
+      "github_stars": "2.1k",
+      "demo_url": "https://demo.gateway.com",
+      "github_url": "https://github.com/username/gateway"
+    },
+    "dashboard": {
+      "title": "Dashboard Analytics B2B",
+      "description": "Plataforma de analytics empresarial con visualizaciones interactivas, reportes automatizados y integración con CRM.",
+      "metrics": "↑ 85% adoption rate",
+      "github_stars": "643",
+      "demo_url": "https://demo.dashboard.com",
+      "github_url": "https://github.com/username/dashboard"
+    }
+  },
+  "view_all": "Ver todos los proyectos"
+}
